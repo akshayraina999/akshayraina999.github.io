@@ -24,11 +24,10 @@
         </div>
       </div>
       <div class="con-menu">
-        <button onclick="handleClick(event, 'con-links')" class="active">
-          Connect
-        </button>
+        <button onclick="handleClick(event, 'con-links')">Connect</button>
         <button onclick="handleClick(event, 'con-posts')">Posts</button>
       </div>
+
       <div class="con-contents">
         <div class="con-links">
           <a target="_blank" href="https://www.instagram.com/akshay_raina_/">
@@ -225,6 +224,11 @@
       }
     });
   </script>
+  <script>
+    $(".theme-switch").on("click", () => {
+      $("body").toggleClass("light-theme");
+    });
+  </script>
   <style>
     body {
       --primary: 25, 91, 255;
@@ -246,14 +250,18 @@
       font-family: "Lato", sans-serif;
       box-sizing: border-box;
     }
+
     .content {
       width: 100%;
-
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       overflow: hidden;
+      /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+        -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3); */
     }
     .con-user {
       padding-top: 10px;
@@ -266,7 +274,6 @@
       background: #0c0c0c;
       padding-bottom: 10px;
       margin-bottom: 30px;
-      border-radius: 0px 0px 0px 0px;
     }
     .con-user .title {
       text-align: center;
@@ -298,7 +305,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px;
-      max-width: 500px;
+      max-width: 470px;
       margin: auto;
       width: 100%;
       position: relative;
@@ -306,32 +313,48 @@
       /* box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.08);
       border-radius: 0px 0px 30px 30px;*/
       border-radius: 50px;
+      box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
     }
     .con-menu button {
-      padding: 12px;
+      padding: 10px;
       width: calc(50% - 4px);
       border: 0px;
       background: transparent;
-      font-weight: bold;
+      font-weight: 600;
       color: rgb(var(--text));
-      font-size: 1rem;
+      font-size: 0.9rem;
       transition: all 0.25s ease;
       /* box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.08); */
-      border-radius: 16px;
+      /* border-radius: 16px;
       background: linear-gradient(45deg, #e1e1e1, #ffffff);
-      box-shadow: 20px -20px 60px #d5d5d5, -20px 20px 60px #ffffff;
+      box-shadow: 20px -20px 60px #d5d5d5, -20px 20px 60px #ffffff; */
       /* background: #55b9f3;
       box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff; */
+      /* box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+      border-radius: 50px; */
       z-index: 2;
     }
     .con-menu button.active {
       /* background: #fff;
       box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.06); */
-      background: linear-gradient(145deg, #e1e1e1, #ffffff);
-      box-shadow: 15px 15px 33px #c1c1c1, -15px -15px 33px #ffffff;
+      /* background: linear-gradient(145deg, #e1e1e1, #ffffff);
+      box-shadow: 15px 15px 33px #c1c1c1, -15px -15px 33px #ffffff; */
       /* background: #55b9f3;
       box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff; */
       /* color: rgb(var(--primary)); */
+      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+        -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+      border-radius: 50px;
     }
     .con-contents {
       width: 100%;
@@ -447,8 +470,14 @@
       position: relative;
       /* border: 2px solid rgb(var(--color)); */
       /* background: #fff; */
-      background: linear-gradient(315deg, #ffffff, #e1e1e1);
-      box-shadow: 15px 15px 33px #c1c1c1, -15px -15px 33px #ffffff;
+      /* background: linear-gradient(315deg, #ffffff, #e1e1e1);
+      box-shadow: 15px 15px 33px #c1c1c1, -15px -15px 33px #ffffff; */
+      box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001,
+        inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001;
+      transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+      border-radius: 30px;
       /* background: #55b9f3;
       box-shadow: 20px 20px 60px #489dcf, -20px -20px 60px #62d5ff; */
 
